@@ -90,9 +90,9 @@ services:
       context: .
     command: procrastinate worker -q openaleph,openaleph-management --concurrency 2
     restart: on-failure
-    depends_on:
-      - postgres
-      - elasticsearch
+#    depends_on:
+#      - postgres
+#      - elasticsearch
     volumes:
       - "./aleph:/aleph/aleph"
       - archive-data:/data
