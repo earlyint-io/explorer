@@ -12,16 +12,16 @@ services:
 #      POSTGRES_PASSWORD: aleph
 #      POSTGRES_DATABASE: aleph
 
-#  elasticsearch:
-#    image: ghcr.io/openaleph/elasticsearch:9
-#    restart: on-failure
-#    environment:
-#      - "ES_JAVA_OPTS=-Xms1g -Xmx1g"
-#    ports:
-#      - "127.0.0.1:9200:9200"
-#    volumes:
-#      - elasticsearch-data:/usr/share/elasticsearch/data
-#      - ./contrib/es/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
+  elasticsearch:
+    image: ghcr.io/openaleph/elasticsearch:9
+    restart: on-failure
+    environment:
+      - "ES_JAVA_OPTS=-Xms1g -Xmx1g"
+    ports:
+      - "127.0.0.1:9200:9200"
+    volumes:
+      - elasticsearch-data:/usr/share/elasticsearch/data
+      - ./contrib/es/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
 
 #  redis:
 #    image: redis:alpine
