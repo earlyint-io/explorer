@@ -70,15 +70,15 @@ services:
       - aleph.env
 
   api:
-    image: ghcr.io/openaleph/openaleph:${ALEPH_TAG:-ALEPH_TAG:-5.0.2}
+    image: openaleph-api:local
     expose:
       - 8000
-    depends_on:
-      - postgres
-      - elasticsearch
-      - redis
-      - worker
-      - ingest
+#    depends_on:
+#      - postgres
+#      - elasticsearch
+#      - redis
+#      - worker
+#      - ingest
     tmpfs:
       - /tmp
     volumes:
