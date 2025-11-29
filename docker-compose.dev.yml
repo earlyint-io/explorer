@@ -149,6 +149,6 @@ services:
 
 volumes:
   archive-data: {}
-#  elasticsearch-data: {}
+  elasticsearch-data: {}
 #  postgres-data: {}
 #  redis-data: {}
