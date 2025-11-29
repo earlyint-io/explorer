@@ -36,14 +36,14 @@ services:
       - aleph.env
 
   worker:
-    image: ghcr.io/openaleph/openaleph:${ALEPH_TAG:-ALEPH_TAG:-5.0.2}
+    image: openaleph-api:local
     command: aleph worker
     restart: on-failure
-    depends_on:
-      - postgres
-      - elasticsearch
-      - redis
-      - ingest
+#    depends_on:
+#      - postgres
+#      - elasticsearch
+#      - redis
+#      - ingest
     tmpfs:
       - /tmp
     volumes:
@@ -52,14 +52,14 @@ services:
       - aleph.env
 
   shell:
-    image: ghcr.io/openaleph/openaleph:${ALEPH_TAG:-ALEPH_TAG:-5.0.2}
+    image: openaleph-api:local
     command: /bin/bash
-    depends_on:
-      - postgres
-      - elasticsearch
-      - redis
-      - ingest
-      - worker
+#    depends_on:
+#      - postgres
+#      - elasticsearch
+#      - redis
+#      - ingest
+#      - worker
     tmpfs:
       - /tmp
     volumes:
