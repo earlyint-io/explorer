@@ -1,42 +1,42 @@
 services:
-  postgres:
-    image: postgres:17
-    ports:
-      - "127.0.0.1:5432:5432"
-    volumes:
-      - postgres-data:/var/lib/postgresql/data
-    # enable this to log all SQL statements
-    # command: ["postgres", "-c", "log_statement=all"]
-    environment:
-      POSTGRES_USER: aleph
-      POSTGRES_PASSWORD: aleph
-      POSTGRES_DATABASE: aleph
+#  postgres:
+#    image: postgres:17
+#    ports:
+#      - "127.0.0.1:5432:5432"
+#    volumes:
+#      - postgres-data:/var/lib/postgresql/data
+#    # enable this to log all SQL statements
+#    # command: ["postgres", "-c", "log_statement=all"]
+#    environment:
+#      POSTGRES_USER: aleph
+#      POSTGRES_PASSWORD: aleph
+#      POSTGRES_DATABASE: aleph
 
-  elasticsearch:
-    image: ghcr.io/openaleph/elasticsearch:9
-    restart: on-failure
-    environment:
-      - "ES_JAVA_OPTS=-Xms1g -Xmx1g"
-    ports:
-      - "127.0.0.1:9200:9200"
-    volumes:
-      - elasticsearch-data:/usr/share/elasticsearch/data
-      - ./contrib/es/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
+#  elasticsearch:
+#    image: ghcr.io/openaleph/elasticsearch:9
+#    restart: on-failure
+#    environment:
+#      - "ES_JAVA_OPTS=-Xms1g -Xmx1g"
+#    ports:
+#      - "127.0.0.1:9200:9200"
+#    volumes:
+#      - elasticsearch-data:/usr/share/elasticsearch/data
+#      - ./contrib/es/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
 
-  redis:
-    image: redis:alpine
-    command: ["redis-server", "--save", "3600", "10"]
-    ports:
-      - "127.0.0.1:6379:6379"
-    volumes:
-      - redis-data:/data
+#  redis:
+#    image: redis:alpine
+#    command: ["redis-server", "--save", "3600", "10"]
+#    ports:
+#      - "127.0.0.1:6379:6379"
+#    volumes:
+#      - redis-data:/data
 
   ftm-analyze:
     image: ghcr.io/dataresearchcenter/ftm-analyze:latest
     entrypoint: procrastinate worker -q analyze --concurrency 2
     restart: on-failure
-    depends_on:
-      - postgres
+#    depends_on:
+#      - postgres
     tmpfs:
       - /tmp
     env_file:
@@ -49,9 +49,9 @@ services:
     tmpfs: /tmp
     volumes:
       - archive-data:/data
-    depends_on:
-      - postgres
-      - redis
+#    depends_on:
+#      - postgres
+#      - redis
     restart: on-failure
     env_file:
       - aleph.env
@@ -62,11 +62,11 @@ services:
     # image: ghcr.io/openaleph/openaleph:latest
     hostname: aleph
     command: /bin/bash
-    depends_on:
-      - postgres
-      - elasticsearch
-      - redis
-      - ingest-file
+#    depends_on:
+#      - postgres
+#      - elasticsearch
+#      - redis
+#      - ingest-file
     tmpfs: /tmp
     volumes:
       - archive-data:/data
@@ -108,11 +108,11 @@ services:
       - "127.0.0.1:5000:5000"
       - "127.0.0.1:5678:5678"
     restart: on-failure
-    depends_on:
-      - postgres
-      - elasticsearch
-      - redis
-      - ingest-file
+#    depends_on:
+#      - postgres
+#      - elasticsearch
+#      - redis
+#      - ingest-file
     tmpfs: /tmp
     volumes:
       - archive-data:/data
@@ -126,29 +126,29 @@ services:
     env_file:
       - aleph.env
 
-  ui:
-    build:
-      context: ui
-    # image: ghcr.io/openaleph/aleph-ui:latest
-    depends_on:
-      - api
-    command: "bash -c 'rsync --archive --inplace --no-compress --whole-file /node_modules /alephui && npm run start'"
-    ports:
-      - "127.0.0.1:8080:8080"
-    volumes:
-      - "./ui/src:/alephui/src:cached"
-      - "./ui/package.json:/alephui/package.json:cached"
-      - "./ui/package-lock.json:/alephui/package-lock.json:cached"
-      - "./ui/craco.config.js:/alephui/craco.config.js:cached"
-      - "./ui/node_modules:/alephui/node_modules:delegated"
-    environment:
-      PORT: "8080"
-      CI: "true"
-    env_file:
-      - aleph.env
+#  ui:
+#    build:
+#      context: ui
+#    # image: ghcr.io/openaleph/aleph-ui:latest
+#    depends_on:
+#      - api
+#    command: "bash -c 'rsync --archive --inplace --no-compress --whole-file /node_modules /alephui && npm run start'"
+#    ports:
+#      - "127.0.0.1:8080:8080"
+#    volumes:
+#      - "./ui/src:/alephui/src:cached"
+#      - "./ui/package.json:/alephui/package.json:cached"
+#      - "./ui/package-lock.json:/alephui/package-lock.json:cached"
+#      - "./ui/craco.config.js:/alephui/craco.config.js:cached"
+#      - "./ui/node_modules:/alephui/node_modules:delegated"
+#    environment:
+#      PORT: "8080"
+#      CI: "true"
+#    env_file:
+#      - aleph.env
 
 volumes:
   archive-data: {}
-  elasticsearch-data: {}
-  postgres-data: {}
-  redis-data: {}
+#  elasticsearch-data: {}
+#  postgres-data: {}
+#  redis-data: {}
