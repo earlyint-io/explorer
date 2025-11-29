@@ -128,8 +128,8 @@ def create_app(config=None):
     }
     talisman.init_app(
         app,
-        force_https=SETTINGS.FORCE_HTTPS,
-        strict_transport_security=SETTINGS.FORCE_HTTPS,
+        force_https=False,
+        strict_transport_security=False,
         feature_policy=feature_policy,
         content_security_policy=SETTINGS.CONTENT_POLICY,
     )
