@@ -23,13 +23,13 @@ services:
       - elasticsearch-data:/usr/share/elasticsearch/data
       - ./contrib/es/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
 
-#  redis:
-#    image: redis:alpine
-#    command: ["redis-server", "--save", "3600", "10"]
-#    ports:
-#      - "127.0.0.1:6379:6379"
-#    volumes:
-#      - redis-data:/data
+  redis:
+    image: redis:alpine
+    command: ["redis-server", "--save", "3600", "10"]
+    ports:
+      - "127.0.0.1:6379:6379"
+    volumes:
+      - redis-data:/data
 
   ftm-analyze:
     image: ghcr.io/dataresearchcenter/ftm-analyze:latest
