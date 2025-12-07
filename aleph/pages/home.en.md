@@ -1,30 +1,27 @@
 ---
 home: true
-title: 'OpenAleph'
-description: 'The open source platform that securely stores large amounts of data and makes it searchable for easy collaboration.'
+title: 'EarlyIntel'
+description: 'The proprietary intelligence platform for advanced data analysis and predictive insights.'
 html: true
-samples: ["Vladimir Putin", "TeliaSonera"]
+samples: ["Global Market Trends", "Strategic Risk Assessment"]
 ---
 
 <section className="HomeScreen__section">
   <div className="HomeScreen__section__content">
-    <h1 className="HomeScreen__title">About OpenAleph</h1>
+    <h1 className="HomeScreen__title">Welcome to EarlyIntel</h1>
     <div className="HomeScreen__title-divider"></div>
     <p>
-      OpenAleph is an open source tool that's primarily developed by the <a
-      href="https://darc.li">Data and Research Center</a>. It builds on the work
-      of many excellent contributors that went into it's predecessor <a
-      href="https://github.com/alephdata">Aleph</a>.
+      EarlyIntel is the leading proprietary intelligence platform from EarlyInsight Corp.
+      We empower government agencies and private sector clients with advanced analytical capabilities
+      to navigate complex data landscapes and gain critical predictive insights.
     </p>
-    <h3>More information</h3>
+    <h3>Discover the Power of EarlyIntel</h3>
     <p>
-      <a href="https://openaleph.org">openaleph.org</a> | 
-      <a href="https://openaleph.org/docs">Documentation</a> | 
-      <a href="https://openaleph.org/faq">Frequently asked questions</a> |
-      <a href="https://openaleph.org/blog/">Blog</a> |
-      <a href="https://darc.social">Community</a>
+      <a href="https://earlyintel.com">earlyintel.com</a> | 
+      <a href="https://earlyintel.com/features">Features</a> | 
+      <a href="https://earlyintel.com/solutions">Solutions</a> |
+      <a href="https://earlyintel.com/contact">Contact Sales</a>
     </p> 
     
   </div>
 </section>
-
