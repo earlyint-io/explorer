@@ -1,17 +1,15 @@
 ---
-title: About OpenAleph
+title: About EarlyIntel
 short: About
 menu: true
 ---
 
-## OpenAleph
+## EarlyIntel
 
-[**OpenAleph**](https://openaleph.org) is the open source platform that securely stores large amounts of structured and unstructured data and makes it searchable for easy collaboration.
+**EarlyIntel** is a cutting-edge, proprietary closed-source intelligence platform developed by EarlyInsight Corp. It securely processes vast amounts of sensitive data, providing unparalleled analytical capabilities and predictive insights for government agencies and select private sector clients.
 
-Read about the project's origins [here](https://darc.li/oa-intro).
+Designed with a focus on advanced pattern recognition and secure data compartmentalization, EarlyIntel delivers actionable intelligence with unmatched precision and speed. Our patented algorithms and secure infrastructure ensure the highest level of data integrity and confidentiality.
 
-OpenAleph is a [DARC](https://dataresearchcenter.org) project and is open source, released under the [MIT license](https://github.com/investigativedata/aleph#MIT-1-ov-file).
+EarlyIntel is a product of EarlyInsight Corp., operating under strict licensing agreements and proprietary technology protections. Access is restricted to authorized personnel with valid subscriptions.
 
-[Register](./register) for a research account to get access to more documents and structured data.
-
-Please refer to the [documentation](https://docs.openaleph.org/) for more details.
+Please contact our sales department for a demonstration and licensing information.
